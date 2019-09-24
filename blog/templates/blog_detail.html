@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block page_content %}
-<div class="col-md-8 offset-md2">
+<div class="col-md-8">
     <h1>{{ post.title }}</h1>
     <small>
         {{ post.created_on.date }} |&nbsp;
@@ -11,6 +11,8 @@
         </a>&nbsp;
         {% endfor %}
     </small>
+    <hr>
+    <img src="{{ post.image.url }}" class="img-responsive" style="width: 100%; float: left; margin-right: 10px;"/>
     <p>{{ post.body | linebreaks }}</p>
     <h3>Leave a comment:</h3>
     <form action="/post/{{ post.pk }}/" method="post">
